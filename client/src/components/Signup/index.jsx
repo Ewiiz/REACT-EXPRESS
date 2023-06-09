@@ -10,17 +10,17 @@ function Signup() {
     const [prenom, setPrenom] = useState("")
     const [pseudo, setPseudo] = useState("")
     const [password, setPassword] = useState("")
-    
-    
-    
+
+
+
 
     const handleSubmit = () => {
         async function Submit() {
-            const { data } = await axios.post('http://192.168.1.81:4000/api/signup', {
+            const { data } = await axios.post('http://localhost:4000/api/signup', {
                 email,
                 nom,
                 prenom,
-                pseudo, 
+                pseudo,
                 password
             })
         }
@@ -28,57 +28,57 @@ function Signup() {
         Submit()
     }
 
-  return (
-    <section>
-        <div className="signin">
+    return (
+        <section>
+            <div className="signin">
 
-            <div className="content">
+                <div className="content">
 
-                <h2>S'incrire</h2>
+                    <h2>S'incrire</h2>
 
-                <div className="form">
+                    <div className="form">
 
-                    <div className="inputBx">
+                        <div className="inputBx">
 
-                        <input type="text" required onChange={ (e) => { setEmail(e.target.value)} }/>
+                            <input type="text" required onChange={(e) => { setEmail(e.target.value) }} />
 
-                        <i>Nom d'utilisateur</i>
+                            <i>Nom d'utilisateur</i>
 
-                    </div>
+                        </div>
 
-                    <div className="inputBx">
+                        <div className="inputBx">
 
-                        <input type="text" required onChange={ (e) => { setNom(e.target.value) } }/>
+                            <input type="text" required onChange={(e) => { setNom(e.target.value) }} />
 
-                        <i>Nom</i>
+                            <i>Nom</i>
 
-                    </div>
+                        </div>
 
-                    <div className="inputBx">
+                        <div className="inputBx">
 
-                        <input type="text" required onChange={ (e) => { setPrenom(e.target.value) } }/>
+                            <input type="text" required onChange={(e) => { setPrenom(e.target.value) }} />
 
-                        <i>Prenom</i>
+                            <i>Prenom</i>
 
-                    </div>
+                        </div>
 
-                    <div className="inputBx">
+                        <div className="inputBx">
 
-                        <input type="text" required onChange={ (e) => { setPseudo(e.target.value) } }/>
+                            <input type="text" required onChange={(e) => { setPseudo(e.target.value) }} />
 
-                        <i>Pseudo</i>
+                            <i>Pseudo</i>
 
-                    </div>
+                        </div>
 
-                    <div className="inputBx">
+                        <div className="inputBx">
 
-                        <input type="password" required onChange={ (e) => { setPassword(e.target.value) } }/>
+                            <input type="password" required onChange={(e) => { setPassword(e.target.value) }} />
 
-                        <i>Mot de Passe</i>
+                            <i>Mot de Passe</i>
 
-                    </div>
+                        </div>
 
-                    {/* <div className="inputBx">
+                        {/* <div className="inputBx">
 
                         <input type="password" required/>
 
@@ -86,26 +86,26 @@ function Signup() {
 
                     </div> */}
 
-                    <div className="links">
+                        <div className="links">
 
-                        <a href='r'>Mot de passe oublié</a>
-                        <Link to="login">Connexion</Link>
+                            <a href='r'>Mot de passe oublié</a>
+                            <Link to="login">Connexion</Link>
 
-                    </div>
+                        </div>
 
-                    <div className="inputBx">
+                        <div className="inputBx">
 
-                        <Link onClick={handleSubmit} to={'login'}>Connexion</Link>
+                            <Link onClick={handleSubmit} to={'login'}>Connexion</Link>
+
+                        </div>
 
                     </div>
 
                 </div>
 
             </div>
-
-        </div>
-    </section>  
-  )
+        </section>
+    )
 }
 
 export default Signup

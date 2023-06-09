@@ -9,9 +9,9 @@ function InfoCompte() {
     const [searchParams] = useSearchParams()
     const id = searchParams.get('id')
 
-    useEffect(()  =>  {
+    useEffect(() => {
         async function Data() {
-            const { data } = await axios.get(`http://192.168.1.81:4000/api/${id}`);
+            const { data } = await axios.get(`http://localhost:4000/api/${id}`);
             setState(data.oneUser)
         }
 
@@ -21,32 +21,32 @@ function InfoCompte() {
     const handleDelete = () => {
 
         async function Data() {
-        const { data } = await axios.delete(`http://192.168.1.81:4000/api/${id}`);
-        setState(data.message)
-    }
+            const { data } = await axios.delete(`http://localhost:4000/api/${id}`);
+            setState(data.message)
+        }
 
         Data()
     }
 
-    
 
-  return (
-    <div className='container-compte'>
 
-        <div className='container-contenu'>
+    return (
+        <div className='container-compte'>
 
-            <h1>{state.pseudo}</h1>
-            <h3>mail : {state.email}</h3>
-            <h3>Prénom : {state.prenom}</h3>
-            <h3>Nom : {state.nom}</h3>
-            <h3>description : {state.decription}</h3>
+            <div className='container-contenu'>
 
-            <Link onClick={handleDelete} to={"/"}>delete</Link>
+                <h1>{state.pseudo}</h1>
+                <h3>mail : {state.email}</h3>
+                <h3>Prénom : {state.prenom}</h3>
+                <h3>Nom : {state.nom}</h3>
+                <h3>description : {state.decription}</h3>
+
+                <Link onClick={handleDelete} to={"/"}>delete</Link>
+
+            </div>
 
         </div>
-
-    </div>
-  )
+    )
 }
 
 export default InfoCompte

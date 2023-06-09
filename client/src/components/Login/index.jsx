@@ -11,72 +11,72 @@ function Login() {
 
     const handleSubmit = () => {
         async function Submit() {
-            const { data } = await axios.post('http://192.168.1.81:4000/api/login', {
-                email, 
+            const { data } = await axios.post('http://localhost:4000/api/login', {
+                email,
                 password
             })
             setId(data.userId)
-            
+
             console.log(data.userId)
             console.log(id)
         }
-        
+
 
         Submit()
-        
+
         id && navigate(`/profile/compte?id=${id}`)
     }
 
-    
 
-  return (
-    <>
-    <section>
-        <div className="signin">
 
-            <div className="content">
+    return (
+        <>
+            <section>
+                <div className="signin">
 
-                <h2>S'identifier</h2>
+                    <div className="content">
 
-                <div className="form">
+                        <h2>S'identifier</h2>
 
-                    <div className="inputBx">
+                        <div className="form">
 
-                        <input type="text" required onChange={ (e) => { setEmail(e.target.value)} }/>
+                            <div className="inputBx">
 
-                        <i>Nom d'utilisateur</i>
+                                <input type="text" required onChange={(e) => { setEmail(e.target.value) }} />
 
-                    </div>
+                                <i>Nom d'utilisateur</i>
 
-                    <div className="inputBx">
+                            </div>
 
-                        <input type="password" required onChange={ (e) => { setPassword(e.target.value) } }/>
+                            <div className="inputBx">
 
-                        <i>Mot de Passe</i>
+                                <input type="password" required onChange={(e) => { setPassword(e.target.value) }} />
 
-                    </div>
+                                <i>Mot de Passe</i>
 
-                    <div className="links">
+                            </div>
 
-                        {/* <Link to={}>Mot de passe oublié</Link> */}
-                        <Link to="/">S'incrire</Link>
+                            <div className="links">
 
-                    </div>
+                                {/* <Link to={}>Mot de passe oublié</Link> */}
+                                <Link to="/">S'incrire</Link>
 
-                    <div className="inputBx">
+                            </div>
 
-                        <Link onClick={handleSubmit} >Connexion</Link>
+                            <div className="inputBx">
+
+                                <Link onClick={handleSubmit} >Connexion</Link>
+
+                            </div>
+
+                        </div>
 
                     </div>
 
                 </div>
-
-            </div>
-
-        </div>
-    </section>
-    </>
-  )
+            </section>
+        </>
+    )
 }
 
 export default Login
