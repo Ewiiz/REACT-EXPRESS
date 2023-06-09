@@ -1,0 +1,274 @@
+/* Import */
+@import url(//db.onlinewebfonts.com/c/2b14c4af7eed1da24d165d25bd867625?family=Kratos+TrueType+-+GOD++WAR);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face {font-family: "Kratos TrueType - GOD WAR"; src: url("//db.onlinewebfonts.com/t/2b14c4af7eed1da24d165d25bd867625.eot"); src: url("//db.onlinewebfonts.com/t/2b14c4af7eed1da24d165d25bd867625.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/2b14c4af7eed1da24d165d25bd867625.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/2b14c4af7eed1da24d165d25bd867625.woff") format("woff"), url("//db.onlinewebfonts.com/t/2b14c4af7eed1da24d165d25bd867625.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/2b14c4af7eed1da24d165d25bd867625.svg#Kratos TrueType - GOD WAR") format("svg"); }
+
+/* Reset */
+*
+{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+
+/* Par Defaut */
+h1, h2, h3, h4, h5, h6
+{
+    font-family: 'Poppins';
+    text-transform: uppercase;
+}
+
+p, button, a, i
+{
+    font-family: 'Poppins';
+}
+
+body
+{
+    background-color: #181818;
+}
+
+:root
+{
+    --color-text: #888888;
+    --color-titre: #ffffff;
+    --color-text-button: #1d1e31;
+}
+
+
+/* Navigation */
+header
+{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    margin-top: 1%;
+    z-index: 1001;
+}
+
+nav
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+nav .container
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 98%;
+}
+
+nav .container .hyper-lien 
+{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+
+nav .container .hyper-lien a
+{
+    font-size: 1.3em;
+    margin: 0 2%;
+    color: var(--color-titre);
+    transition: color 0.3s;
+}
+
+nav .container .hyper-lien a:hover
+{
+    color: #fec675;
+}
+
+nav .container .connexion
+{
+    display: none;
+    justify-content: center;
+    width: 12%;
+}
+
+nav .container .connexion a
+{
+    font-size: 1.1em;
+    padding: 0 4%;
+    color: #fec675;
+}
+
+nav .container .connexion a.connec
+{
+    border-right: 2px solid #fec675;
+}
+
+nav .container .connexion a.inscrit
+{
+    border-left: 2px solid #fec675;
+}
+
+
+section
+{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+section::before
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#000, #fec675, #000);
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0%
+    {
+        transform: translateY(-100%);
+    }
+
+    100%
+    {
+        transform: translateY(100%);
+    }
+}
+
+section span
+{
+    position: relative;
+    display: flex;
+    width: calc(6.25vw - 2px);
+    height: calc(6.25vw - 2px); 
+    background: #1d1e31;  
+    transition: background 2s;
+}
+
+section span:hover
+{
+    background-color: #fec675;
+    transition: background 0s;
+}
+
+section .signin
+{
+    position: absolute;
+    width: 400px;
+    background: #222;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+section .signin .content
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+section .signin .content h2
+{
+    font-size: 2em;
+    color: #fec675;
+    text-transform: uppercase;
+}
+
+section .signin .content .form
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+section .signin .content .form .inputBx
+{
+    position: relative;
+    width: 100%;
+}
+
+section .signin .content .form .inputBx input
+{
+    position: relative;
+    width: 100%;
+    background: #333;
+    border: none;
+    outline: none;
+    padding: 25px 10px 7.5px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+section .signin .content .form .inputBx i
+{
+    position: absolute;
+    left: 0;
+    padding: 15px 10px;
+    font-style: normal;
+    color: #aaa;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+section .signin .content .form .inputBx input:focus ~ i,
+section .signin .content .form .inputBx input:valid ~ i
+{
+    transform: translateY(-8px);
+    font-size: 0.8em;
+    color: #fff;
+}
+
+section .signin .content .form .links 
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+section .signin .content .form .links a
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+section .signin .content .form .links a:nth-child(2)
+{
+    color: #fec675;
+    font-weight: 600;
+}
+
+section .signin .content .form .inputBx input[type="submit"]
+{
+    padding: 10px;
+    background-color: #fec675;
+    color: #1d1e31;
+    font-weight: 600;
+    font-size: 1.25em;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+}

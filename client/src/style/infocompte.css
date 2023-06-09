@@ -1,0 +1,43 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+
+/* Par Defaut */
+h1, h2, h3, h4, h5, h6
+{
+    font-family: 'Poppins';
+    text-transform: uppercase;
+}
+
+p, button, a, i
+{
+    font-family: 'Poppins';
+}
+
+body
+{
+    background-color: #181818;
+}
+
+.container-compte {
+    width: 100vw;
+    height: 100vh;
+    /* background-color: red;  */
+}
+
+.container-contenu {
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto 0 50px;
+    /* background-color: blue; */
+}
+
+.container-contenu > h1 {
+    color: #ffffff;
+}
